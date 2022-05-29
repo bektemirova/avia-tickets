@@ -3,14 +3,26 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 
 export const flightAPI = createAsyncThunk("tickets/flightAPI", async function (_, {rejectWithValue}) {
   try {
-    const response = await fetch("http://localhost:3001/flights?_limit=2")
+    const response = await fetch("http://localhost:3001/flights")
     if (!response.ok) {
       throw new Error("Something went wrong")
     }
 
     const data = await response.json()
 
-    return data
+
+    const filteredData = data.reduce((acc, fly) => {
+
+      if (fly.flight.carrier.uid == "LO") {
+        acc.lo.push(fly)
+      }
+      if (fly.flight.carrier.uid == "SU1") {
+        acc.flot.push(fly)
+      }
+      return acc
+    }, {lo: [], flot: []})
+    //console.log(filteredData)
+    return filteredData
   } catch (error) {
     return rejectWithValue(error.message)
   }

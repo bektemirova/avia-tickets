@@ -4,6 +4,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import './App.css';
 import TicketList from './components/TicketList';
 import LeftSide from './components/leftSideBar/LeftSide';
+import {Routes, Route} from "react-router-dom"
+import FormList from './components/registration-form/FormList';
 
 function App() {
   const dispatch = useDispatch()
@@ -14,12 +16,19 @@ function App() {
   return (
 
 
-    <div className="App">
-
-      <LeftSide />
+    <div >
       {status === "loading" && <h2>Loading...</h2>}
       {error && <h2>Sorry, an error: {error}</h2>}
-      <TicketList />
+
+      <Routes>
+        <Route path="/" element={<FormList />} />
+
+        <Route path="/tickets" element={<TicketList />} />
+
+      </Routes>
+
+
+
 
     </div>
 

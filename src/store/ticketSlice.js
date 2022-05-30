@@ -41,7 +41,8 @@ const ticketSlice = createSlice({
     getData() {},
     filterData() {},
     sortData() {},
-    findData() {}
+    findData() {},
+
   },
   extraReducers: {
     [flightAPI.pending]: (state) => {

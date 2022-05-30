@@ -1,7 +1,90 @@
 .App {
 	text-align: center;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 19rem auto;
 	text-align: left;
-	padding: 1rem;
+	margin: auto;
+	gap: 10px;
+	padding: 3rem;
+	width: 100%;
+}
+.logo-container {
+	display: flex;
+
+	align-items: left;
+	width: 30px;
+	height: 30px;
+}
+.right {
+	align-items: flex-end;
+}
+
+#form {
+	background-color: rgb(37, 133, 202);
+	height: 50%;
+	width: 70%;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+#form h3 {
+	border-bottom: 2px solid #f78930;
+	width: 50%;
+	margin: 0 auto;
+	padding: 5px;
+	text-align: center;
+}
+::placeholder {
+	color: #fff;
+}
+#input #input-group {
+	width: 300px;
+	margin: 5px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	outline: none;
+	background: transparent;
+	color: #fff;
+}
+#input2 #input-group {
+	width: 195px;
+	margin: 5px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	outline: none;
+	background: transparent;
+	color: #fff;
+}
+#input3 #input-group {
+	margin-left: 50px;
+}
+#input4 #input-group {
+	width: 300px;
+	margin: 5px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	outline: none;
+	background: transparent;
+	color: #fff;
+}
+#input4 #input-group1 {
+	width: 615px;
+	margin: 5px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	outline: none;
+	background: transparent;
+	color: #fff;
+}
+
+.link {
+	text-decoration: none;
+	color: white;
 }

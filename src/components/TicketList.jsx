@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import TicketItem from "./Ticket_Item";
+import LeftSide from "./leftSideBar/LeftSide";
 
 const TicketList = () => {
 	const flights = useSelector((state) => state.tickets.flights);
-	console.log(flights, "data it is ");
+
 	const [selectedCarrier, setSelectedCarrier] = useState("lo");
-	console.log(selectedCarrier, "state is");
+
 	return (
-		<div>
+		<div className="App">
+			<LeftSide />
 			{flights[selectedCarrier]
 				? flights[selectedCarrier].map((item) => (
 						<TicketItem key={item.flightToken} {...item.flight} />

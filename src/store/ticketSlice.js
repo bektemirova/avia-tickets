@@ -7,12 +7,11 @@ export const flightAPI = createAsyncThunk("tickets/flightAPI", async function (_
     if (!response.ok) {
       throw new Error("Something went wrong")
     }
-
     const data = await response.json()
 
+    //just take 2 carriers - Aeroflot and LOT
 
     const filteredData = data.reduce((acc, fly) => {
-
       if (fly.flight.carrier.uid == "LO") {
         acc.lo.push(fly)
       }
@@ -21,7 +20,7 @@ export const flightAPI = createAsyncThunk("tickets/flightAPI", async function (_
       }
       return acc
     }, {lo: [], flot: []})
-    //console.log(filteredData)
+
     return filteredData
   } catch (error) {
     return rejectWithValue(error.message)
@@ -60,5 +59,5 @@ const ticketSlice = createSlice({
   }
 })
 
-export const {getData} = ticketSlice.actions
+export const {getData, sortData, filterData} = ticketSlice.actions
 export default ticketSlice.reducer
